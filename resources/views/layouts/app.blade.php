@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Scripts -->
+    <wireui:scripts />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <!-- Styles -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @livewireStyles
+    @stack('css')
 </head>
 
 <body class="font-sans antialiased">
@@ -35,16 +35,43 @@
         @endif
 
         <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        <main id="main-content"
+            class="flex-1 overflow-x-hidden overflow-y-auto p-6 md:p-10">
+            <div class="max-w-7xl mx-auto">
+                {{ $slot }}
+            </div>
         </main>
     </div>
 
     @stack('modals')
 
     @livewireScripts
-    <wireui:scripts />
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('darkModeControl', () => ({
+                darkMode: localStorage.getItem('darkMode') === 'true',
+                toggleTheme() {
+                    this.darkMode = !this.darkMode;
+                    localStorage.setItem('darkMode', this.darkMode);
+                }
+            }))
+        })
+    </script>
+
+    <script>
+        Livewire.on('swal', (data) => {
+            Swal.fire(data[0]);
+        })
+    </script>
+
+    @if (session('swal'))
+        <script>
+            Swal.fire(@json(session('swal')));
+        </script>
+    @endif
+    @stack('js')
 </body>
 
 </html>
