@@ -10,7 +10,7 @@
         </div>
 
         <div class="flex flex-col sm:flex-row justify-between gap-3 pt-2">
-            <x-w-button wire:click="closeModal" label="Cancelar" flat secondary />
+            <x-w-button wire:click="closeModal" label="Cancelar" flat />
 
             <div class="flex gap-2">
                 <x-w-button wire:click="reject" label="Rechazar" icon="x-mark" red outline />

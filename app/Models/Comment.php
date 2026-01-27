@@ -17,4 +17,7 @@ class Comment extends Model
         'ip_address'
     ];
 
+    protected $casts = [
+        'status' => 'integer', // O mapearlo a un Enum si lo creas
+    ];
 }
