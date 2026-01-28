@@ -114,7 +114,7 @@
                 <div id="hero-image-container" class="relative opacity-0 scale-95 z-10">
                     <div
                         class="relative rounded-3xl p-2 bg-white/40 backdrop-blur-sm border border-white/50 shadow-2xl">
-                        <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-4.png"
+                        <img src="{{ asset('img/home.webp') }}"
                             alt="Professional Services"
                             class="block w-full h-auto lg:max-w-[580px] rounded-2xl shadow-[0_0_1px_rgba(0,0,0,0.1)]">
 

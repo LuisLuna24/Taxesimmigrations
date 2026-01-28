@@ -10,8 +10,8 @@
         'home' => $currentLang === 'en' ? 'Home' : 'Inicio',
         'services' => $currentLang === 'en' ? 'Services' : 'Servicios',
         'values' => $currentLang === 'en' ? 'Values' : 'Valores',
-        'reviews' => $currentLang === 'en' ? 'Reviews' : 'Reseñas',
         'policies' => $currentLang === 'en' ? 'Policies' : 'Políticas',
+        'reviews' => $currentLang === 'en' ? 'Reviews' : 'Reseñas',
         'contact' => $currentLang === 'en' ? 'Contact' : 'Contacto',
     ];
 
@@ -19,8 +19,9 @@
         ['name' => $t['home'], 'url' => $currentLang === 'en' ? '/en' : '/'],
         ['name' => $t['services'], 'url' => $currentLang === 'en' ? '/en/services' : '/services'],
         ['name' => $t['values'], 'url' => $currentLang === 'en' ? '/en/values' : '/values'],
-        ['name' => $t['reviews'], 'url' => $currentLang === 'en' ? '/en/reviews' : '/reviews'],
         ['name' => $t['policies'], 'url' => $currentLang === 'en' ? '/en/policies' : '/policies'],
+        ['name' => $t['reviews'], 'url' => $currentLang === 'en' ? '/en/reviews' : '/reviews'],
+
     ];
 @endphp
 
@@ -44,8 +45,8 @@
 
             <div class="flex-shrink-0 flex items-center">
                 <a href="{{ $currentLang === 'en' ? '/en' : '/' }}" class="group relative z-50">
-                    <img src="{{ asset('img/Locho C.webp') }}" alt="logo"
-                        class="w-16 transition-transform duration-300 group-hover:scale-105" />
+                    <img src="{{ asset('img/locho M.webp') }}" alt="logo"
+                        class="h-10 transition-transform duration-300 group-hover:scale-105" />
                 </a>
             </div>
 

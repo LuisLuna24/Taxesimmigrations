@@ -6,23 +6,15 @@
                 'image' => asset('img/inmigracion.webp'),
                 'desc' => __('srv_imm_desc'),
                 'tags' => 'immigration visa eb1 eb2 tps residency status inmigración residencia',
-                'features' => [
-                    __('Visa EB1 y EB2'),
-                    __('Visa certificación laboral'),
-                    __('Permiso de trabajo y TPS'),
-                    __('Ajustes de estatus'),
-                ],
+                'alert' => __('srv_imm_alert'),
+                'features' => [__('srv_imm_1'), __('srv_imm_2'), __('srv_imm_3'), __('srv_imm_4'), __('srv_imm_5')],
             ],
             [
                 'title' => __('srv_tax_title'),
                 'image' => asset('img/Impuestos.webp'),
                 'desc' => __('srv_tax_desc'),
                 'tags' => 'taxes impuestos personales corporativos itin business tax empresa',
-                'features' => [
-                    __('Impuestos personales y corporativos'),
-                    __('Trámite de Tax ID (ITIN)'),
-                    __('Creación de empresas (LLC/Corp)'),
-                ],
+                'features' => [__('srv_tax_1'), __('srv_tax_2'), __('srv_tax_3'), __('srv_tax_4')],
             ],
             [
                 'title' => __('srv_acc_title'),
@@ -30,9 +22,17 @@
                 'desc' => __('srv_acc_desc'),
                 'tags' => 'accidents accidentes transito personal ticket licencia dui auto coche',
                 'features' => [
-                    __('Accidentes de tránsito'),
-                    __('Accidentes personales'),
-                    __('Ticket por NO licencia y DUI'),
+                    __('srv_acc_1'),
+                    __('srv_acc_2'),
+                    __('srv_acc_3'),
+                    __('srv_acc_4'),
+                    __('srv_acc_5'),
+                    __('srv_acc_6'),
+                    __('srv_acc_7'),
+                    __('srv_acc_8'),
+                    __('srv_acc_9'),
+                    __('srv_acc_10'),
+                    __('srv_acc_11'),
                 ],
             ],
             [
@@ -40,10 +40,23 @@
                 'image' => asset('img/Notary Public.webp'),
                 'desc' => __('srv_notary_desc'),
                 'tags' => 'notaria notary apostilla matrimonio divorcio documentos legal wedding',
+                'features' => [__('srv_notary_1'), __('srv_notary_2'), __('srv_notary_3'), __('srv_notary_4')],
+            ],
+
+            [
+                'title' => __('srv_other_title'),
+                'image' => asset('img/other.webp'),
+                'desc' => __('srv_other_desc'),
+                'tags' => 'notaria notary apostilla matrimonio divorcio documentos legal wedding',
                 'features' => [
-                    __('Notarización de documentos'),
-                    __('Apostillas de documentos'),
-                    __('Matrimonios y Divorcio simple'),
+                    __('srv_other_1'),
+                    __('srv_other_2'),
+                    __('srv_other_3'),
+                    __('srv_other_4'),
+                    __('srv_other_5'),
+                    __('srv_other_6'),
+                    __('srv_other_7'),
+                    __('srv_other_8'),
                 ],
             ],
         ];
@@ -61,9 +74,8 @@
                 service.tags.toLowerCase().includes(term)
             );
         }
-    }"
-        x-init="gsap.to('.anim-header', { opacity: 1, y: 0, duration: 0.8, delay: 0.2 });
-        setTimeout(() => { isLoaded = true; }, 400);">
+    }" x-init="gsap.to('.anim-header', { opacity: 1, y: 0, duration: 0.8, delay: 0.2 });
+    setTimeout(() => { isLoaded = true; }, 400);">
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 
@@ -107,7 +119,13 @@
                             <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-900 transition-colors"
                                 x-text="service.title"></h3>
                             <p class="text-slate-500 text-sm leading-relaxed mb-6" x-text="service.desc"></p>
-
+                            <div x-show="service.alert" class="mb-6 pt-4 border-t border-red-100">
+                                <p x-text="service.alert"
+                                    class="text-[11px] uppercase tracking-wider font-bold text-red-600 flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+                                    Disclaimer
+                                </p>
+                            </div>
                             <ul class="space-y-3 mb-8 flex-1">
                                 <template x-for="feature in service.features" :key="feature">
                                     <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">

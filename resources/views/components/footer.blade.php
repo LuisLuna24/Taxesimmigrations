@@ -119,9 +119,61 @@
                                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                             </svg>
                         </div>
-                        <a href="mailto:taxesjmj@gmail.com"
+                        <a href="mailto:contac@taxesmigra.com"
                             class="text-slate-600 hover:text-primary-700 font-semibold text-sm transition-colors break-all tracking-tight">
-                            taxesjmj@gmail.com
+                            contac@taxesmigra.com
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div
+                            class="size-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8" />
+                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                <path d="M16.5 7.5v.01" />
+                            </svg>
+                        </div>
+                        <a href="https://www.instagram.com/taxesymigra.jmj/"
+                            class="text-slate-600 hover:text-primary-700 font-semibold text-sm transition-colors break-all tracking-tight">
+                            taxesymigra.jmj
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div
+                            class="size-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                            </svg>
+                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=100065407053406"
+                            class="text-slate-600 hover:text-primary-700 font-semibold text-sm transition-colors break-all tracking-tight">
+                            Taxes JMJ & Multiservices
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div
+                            class="size-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917" />
+                            </svg>
+                        </div>
+                        <a href="https://www.tiktok.com/@taxes.migra.jmj"
+                            class="text-slate-600 hover:text-primary-700 font-semibold text-sm transition-colors break-all tracking-tight">
+                            taxes.migra.jmj
                         </a>
                     </div>
                 </div>
