@@ -6,7 +6,7 @@
     $content = [
         'es' => [
             'description' =>
-                'Servicios profesionales de preparación de formas migratorias e impuestos. Compromiso, honestidad y eficiencia en cada trámite.',
+                'Servicios profesionales de preparación de  impuestos y llenado de formas migratorias. Compromiso, honestidad y eficiencia en cada trámite.',
             'navTitle' => 'Navegación',
             'contactTitle' => 'Contacto',
             'rights' => 'Todos los derechos reservados.',
@@ -17,7 +17,7 @@
         ],
         'en' => [
             'description' =>
-                'Professional immigration form preparation and tax services. Commitment, honesty, and efficiency in every process.',
+                'Professional Tax Preparation and Immigration Form Services. Commitment, honesty, and efficiency in every process.',
             'navTitle' => 'Navigation',
             'contactTitle' => 'Contact',
             'rights' => 'All rights reserved.',

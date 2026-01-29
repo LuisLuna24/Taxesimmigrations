@@ -26,10 +26,10 @@
         </div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
             <h1 class="gsap-hero-text opacity-0 text-4xl md:text-5xl font-black text-white mb-4">
-                Contáctanos
+                {{ __('cont_title') }}
             </h1>
             <p class="gsap-hero-text opacity-0 text-slate-400 max-w-2xl mx-auto text-lg">
-                Estamos aquí para escucharte. Elige tu medio preferido.
+                {{ __('cont_desc') }}
             </p>
         </div>
     </div>
@@ -45,12 +45,12 @@
                     <div class="gsap-col-left opacity-0 mb-6">
                         <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
                             <span class="w-2 h-8 bg-blue-600 rounded-full"></span>
-                            Atención Directa
+                            {{ __('cont_sub_title_contact') }}
                         </h2>
                     </div>
 
                     {{-- Tarjeta Teléfono --}}
-                    <a href="tel:+13854259442" class="gsap-card-contact opacity-0 block group">
+                    <a href="tel:+13854259442" target="_blank" rel="noopener noreferrer" class="gsap-card-contact opacity-0 block group">
                         <div
                             class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-200">
                             <div
@@ -61,7 +61,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Llámanos</p>
+                                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">{{ __('cont_contact_c1') }}</p>
                                 <p
                                     class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
                                     +1 (385) 425-9442</p>
@@ -69,8 +69,33 @@
                         </div>
                     </a>
 
+                    {{-- Tarjeta Whatsapp --}}
+                    <a href="https://wa.me/+13854259442" target="_blank" rel="noopener noreferrer" class="gsap-card-contact opacity-0 block group">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-lime-200">
+                            <div
+                                class="size-16 bg-lime-50 rounded-2xl flex items-center justify-center text-lime-600 group-hover:bg-lime-600 group-hover:text-white transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                                    <path
+                                        d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">{{ __('cont_contact_c2') }}</p>
+                                <p
+                                    class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-lime-700 transition-colors">
+                                    +1 (385) 425-9442</p>
+                            </div>
+                        </div>
+                    </a>
+
                     {{-- Tarjeta Correo --}}
-                    <a href="mailto:contac@taxesmigra.com" class="gsap-card-contact opacity-0 block group">
+                    <a href="mailto:contac@taxesmigra.com" target="_blank" rel="noopener noreferrer" class="gsap-card-contact opacity-0 block group">
                         <div
                             class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-200">
                             <div
@@ -81,10 +106,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">Escríbenos</p>
+                                <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">{{ __('cont_contact_c3') }}</p>
                                 <p
                                     class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-indigo-700 transition-colors">
-                                     contac@taxesmigra.com</p>
+                                    contac@taxesmigra.com</p>
                             </div>
                         </div>
                     </a>
@@ -95,14 +120,14 @@
                     <div class="gsap-col-right opacity-0 mb-6">
                         <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
                             <span class="w-2 h-8 bg-purple-600 rounded-full"></span>
-                            Síguenos
+                            {{ __('cont_sub_title_social') }}
                         </h2>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
 
                         {{-- Facebook --}}
-                        <a href="https://www.facebook.com/profile.php?id=100065407053406" target="_blank"
+                        <a href="https://www.facebook.com/profile.php?id=100065407053406" target="_blank" rel="noopener noreferrer"
                             class="gsap-social opacity-0 flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-blue-100 transition-all duration-300 group">
                             <div
                                 class="size-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
@@ -113,13 +138,13 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 group-hover:text-[#1877F2] transition-colors">
-                                    Facebook</h4>
+                                    {{ __('cont_social_c1') }}</h4>
                                 <p class="text-xs text-slate-500">Taxes JMJ & Multiservices</p>
                             </div>
                         </a>
 
                         {{-- Instagram --}}
-                        <a href="https://www.instagram.com/taxesymigra.jmj/" target="_blank"
+                        <a href="https://www.instagram.com/taxesymigra.jmj/" target="_blank" rel="noopener noreferrer"
                             class="gsap-social opacity-0 flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-pink-100 transition-all duration-300 group">
                             <div
                                 class="size-12 bg-instagram rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
@@ -130,13 +155,13 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 group-hover:text-[#cc2366] transition-colors">
-                                    Instagram</h4>
+                                    {{ __('cont_social_c2') }}</h4>
                                 <p class="text-xs text-slate-500">taxesymigra.jmj</p>
                             </div>
                         </a>
 
                         {{-- TikTok --}}
-                        <a href="https://www.tiktok.com/@taxes.migra.jmj" target="_blank"
+                        <a href="https://www.tiktok.com/@taxes.migra.jmj" target="_blank" rel="noopener noreferrer"
                             class="gsap-social opacity-0 flex items-center gap-4 bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 group">
                             <div
                                 class="size-12 bg-black rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
@@ -146,7 +171,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900 group-hover:text-black transition-colors">TikTok
+                                <h4 class="font-bold text-slate-900 group-hover:text-black transition-colors">{{ __('cont_social_c3') }}
                                 </h4>
                                 <p class="text-xs text-slate-500">taxes.migra.jmj</p>
                             </div>

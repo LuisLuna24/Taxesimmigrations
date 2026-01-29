@@ -391,8 +391,7 @@
     "values_privacy_desc": "Garantizamos el compromiso y la confidencialidad absoluta de su información.",
     "values_commitment_title": "Compromiso Real",
     "values_commitment_desc": "Te acompañamos hombro a hombro antes, durante y después de todo el proceso.",
-    "services_eyebrow": "Nuestros Servicios",
-    "services_title": "Soluciones legales y financieras",
+
     "learn_more": "Más información",
 
     "services_subtitle": "Llenado de  formas migratorias para diversos trámites",
@@ -410,7 +409,6 @@
     "srv_tax_3": "Creación de empresas",
     "srv_tax_4": "Contabilidad de empresa",
 
-
     "srv_accidents_title": "Accidentes y Lesiones Personales",
     "srv_acc_1": "Accidentes Automovilísticos",
     "srv_acc_2": "Accidentes de Camiones",
@@ -424,13 +422,11 @@
     "srv_acc_10": "Accidentes por Conducir bajo los Efectos del Alcohol (DUI)",
     "srv_acc_11": "Muerte por Negligencia / Muerte Injusta",
 
-    "srv_notary_title": "Notary Public",
     "srv_notary_1": "Notarización de documento",
     "srv_notary_2": "Apostillas de documentos",
     "srv_notary_3": "Matrimonios",
     "srv_notary_4": "Divorcio simple",
 
-    "srv_other_title": "Derecho de Familia en Georgia",
     "srv_other_1": "Divorcio (Contencioso y de Mutuo Acuerdo)",
     "srv_other_2": "Custodia de Menores",
     "srv_other_3": "Manutención de los Hijos (Child Support)",
@@ -448,6 +444,7 @@
 
     "services_eyebrow": "Nuestros Servicios",
     "services_title": "Encuentra la solución exacta",
+
     "services_subtitle": "para tus necesidades",
     "services_search_placeholder": "Buscar por servicio...",
     "services_view_details": "Ver detalles",
@@ -461,18 +458,17 @@
     "srv_notary_title": "Notary Public",
     "srv_notary_desc": "Servicios notariales oficiales, apostillas y trámites civiles como matrimonios y divorcios.",
 
-    "srv_other_title": "Derecho de Familia en Georgia",
+    "srv_other_title": "Familia en Georgia",
     "srv_other_desc": "Asistencia en trámites familiares en Georgia.",
-
 
     "about_title": "Nuestra Esencia",
     "mission_title": "Misión",
     "vision_title": "Visión",
     "values_title": "Nuestros Valores",
     "mission_text": "En Taxes and Immigration by Josdaly Marin, brindamos servicios integrales de preparación de impuestos y llenado de planillas migratorias, actuando con ética, responsabilidad y compromiso. Acompañamos a nuestros clientes en cada proceso, ofreciendo soluciones claras, seguras y personalizadas.",
-    "vision_text": "Ser una empresa líder y confiable en los Estados Unidos en servicios de impuestos y asistencia migratoria, reconocida por nuestra transparencia, excelencia profesional y trato humano, apoyando a familias y emprendedores hacia la estabilidad.",
+    "vision_text": "Ser una empresa líder y confiable en los Estados Unidos en servicios de impuestos, reconocida por nuestra transparencia, excelencia profesional y trato humano, apoyando a familias y emprendedores hacia la estabilidad.",
     "val_ethics": "Ética profesional",
-    "val_ethics_desc": "Actuamos conforme a las leyes fiscales y migratorias.",
+    "val_ethics_desc": "Actuamos conforme a las leyes fiscales.",
     "val_conf": "Confidencialidad",
     "val_conf_desc": "Protegemos la información personal y financiera al 100%.",
     "val_comp": "Compromiso",
@@ -507,5 +503,18 @@
     "pol_resp_desc": "El cliente es responsable de proporcionar información veraz, completa y actualizada. Taxes and Migra by Josdaly Marin no se hace responsable por consecuencias derivadas de información incorrecta o falsa suministrada por el cliente.",
 
     "pol_comm_title": "Política de Comunicación y Seguimiento",
-    "pol_comm_desc": "Mantenemos comunicación clara y respetuosa con nuestros clientes. El seguimiento post-servicio está disponible para aclarar dudas relacionadas con el trabajo realizado, dentro de los límites del servicio contratado."
+    "pol_comm_desc": "Mantenemos comunicación clara y respetuosa con nuestros clientes. El seguimiento post-servicio está disponible para aclarar dudas relacionadas con el trabajo realizado, dentro de los límites del servicio contratado.",
+
+    "cont_title": "Contáctanos",
+    "cont_desc": "Estamos aquí para escucharte. Elige tu medio preferido.",
+
+    "cont_sub_title_contact": "Atención Directa",
+    "cont_contact_c1": "Llámanos",
+    "cont_contact_c2": "Contáctanos por WhatsApp",
+    "cont_contact_c3": "Escríbenos",
+
+    "cont_sub_title_social": "Síguenos",
+    "cont_social_c1": "Facebook",
+    "cont_social_c2": "Instagram",
+    "cont_social_c3": "TikTok"
 }

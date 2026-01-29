@@ -428,7 +428,6 @@
     "srv_notary_3": "Marriages",
     "srv_notary_4": "Simple Divorce",
 
-    "srv_other_title": "Family Law in Georgia",
     "srv_other_1": "Divorce (Contested and Uncontested)",
     "srv_other_2": "Child Custody",
     "srv_other_3": "Child Support",
@@ -457,7 +456,7 @@
     "srv_notary_title": "Notary Public",
     "srv_notary_desc": "Official notary services, apostilles, and civil procedures such as marriages and simple divorce.",
 
-    "srv_other_title": "Family Law in Georgia",
+    "srv_other_title": "Family in Georgia",
     "srv_other_desc": "Assistance with Georgia family law matters.",
 
     "pol_header_title": "Policies & Terms of Service",
@@ -473,9 +472,9 @@
     "vision_title": "Vision",
     "values_title": "Our Values",
     "mission_text": "At Taxes and Immigration by Josdaly Marin, we provide comprehensive tax preparation and immigration form filing services, operating with ethics, responsibility, and commitment. We guide our clients through every step of the process, offering clear, secure, and personalized solutions.",
-    "vision_text": "To be a leading and trusted firm in the United States for tax services and immigration assistance, recognized for our transparency, professional excellence, and compassionate approach, supporting families and entrepreneurs on their path toward stability.",
+    "vision_text": "To be a premier and trusted tax firm in the U.S., known for transparency, excellence, and a compassionate approach, empowering families and entrepreneurs to achieve stability.",
     "val_ethics": "Professional Ethics",
-    "val_ethics_desc": "We operate in full compliance with tax and immigration laws.",
+    "val_ethics_desc": "We operate in full compliance with tax laws.",
     "val_conf": "Confidentiality",
     "val_conf_desc": "We provide 100% protection for your personal and financial information.",
     "val_comp": "Commitment",
@@ -495,5 +494,19 @@
     "pol_resp_title": "Client Responsibility Policy",
     "pol_resp_desc": "The client is responsible for providing truthful, complete, and up-to-date information. Taxes and Migra by Josdaly Marin is not responsible for consequences derived from incorrect or false information supplied by the client.",
     "pol_comm_title": "Communication & Follow-up Policy",
-    "pol_comm_desc": "We maintain clear and respectful communication with our clients. Post-service follow-up is available to clarify doubts related to the work performed, within the limits of the contracted service."
+    "pol_comm_desc": "We maintain clear and respectful communication with our clients. Post-service follow-up is available to clarify doubts related to the work performed, within the limits of the contracted service.",
+
+    "cont_title": "Contact Us",
+    "cont_desc": "We are here to listen. Choose your preferred way to connect.",
+
+
+    "cont_sub_title_contact": "Direct Contact",
+    "cont_contact_c1": "Call Us",
+    "cont_contact_c2": "Contact Us on WhatsApp",
+    "cont_contact_c3": "Email Us",
+
+    "cont_sub_title_social": "Follow Us",
+    "cont_social_c1": "Facebook",
+    "cont_social_c2": "Instagram",
+    "cont_social_c3": "TikTok"
 }

@@ -40,7 +40,7 @@
                 'image' => asset('img/Notary Public.webp'),
                 'desc' => __('srv_notary_desc'),
                 'tags' => 'notaria notary apostilla matrimonio divorcio documentos legal wedding',
-                'features' => [__('srv_notary_1'), __('srv_notary_2'), __('srv_notary_3'), __('srv_notary_4')],
+                'features' => [__('srv_notary_1'), __('srv_notary_2'), __('srv_notary_3')],
             ],
 
             [
@@ -119,13 +119,7 @@
                             <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-900 transition-colors"
                                 x-text="service.title"></h3>
                             <p class="text-slate-500 text-sm leading-relaxed mb-6" x-text="service.desc"></p>
-                            <div x-show="service.alert" class="mb-6 pt-4 border-t border-red-100">
-                                <p x-text="service.alert"
-                                    class="text-[11px] uppercase tracking-wider font-bold text-red-600 flex items-center gap-2">
-                                    <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
-                                    Disclaimer
-                                </p>
-                            </div>
+
                             <ul class="space-y-3 mb-8 flex-1">
                                 <template x-for="feature in service.features" :key="feature">
                                     <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
@@ -141,6 +135,13 @@
                                     </li>
                                 </template>
                             </ul>
+                            <div x-show="service.alert" class="mb-6 pt-4 border-t border-red-100">
+                                <p x-text="service.alert"
+                                    class="text-[11px] uppercase tracking-wider font-bold text-red-600 flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+                                    Disclaimer
+                                </p>
+                            </div>
                         </div>
                     </article>
                 </template>
