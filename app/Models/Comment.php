@@ -21,4 +21,8 @@ class Comment extends Model
     protected $casts = [
         'status' => 'integer', // O mapearlo a un Enum si lo creas
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
