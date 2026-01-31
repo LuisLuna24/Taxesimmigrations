@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Dashboard;
 
 use App\Models\Comment;
 use Livewire\Component;
@@ -18,7 +18,7 @@ class CommentStats extends Component
             'rejected' => Comment::where('status', 2)->count(),
         ];
 
-        return view('livewire.comment-stats', [
+        return view('livewire.dashboard.comment-stats', [
             'stats' => $stats
         ]);
     }

@@ -3,14 +3,19 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
 
@@ -19,6 +24,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -29,6 +35,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'type_user_id',
         'status'
     ];
 
@@ -64,5 +71,24 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function employee(): HasOne
+    {
+        return $this->hasOne(Employee::class, 'id', 'user_id');
+    }
+
+    public function client(): HasOne
+    {
+        return $this->hasOne(Client::class, 'id', 'user_id');
+    }
+
+    public function TypeUser(): BelongsTo
+    {
+        return $this->belongsTo(TypeUser::class, 'type_user_id');
+    }
+
+    public function role()
+    {
+        return $this->type_user_id;
     }
 }

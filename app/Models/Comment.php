@@ -14,7 +14,8 @@ class Comment extends Model
         'name',
         'comment',
         'status',
-        'ip_address'
+        'ip_address',
+        'user_id'
     ];
 
     protected $casts = [

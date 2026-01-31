@@ -22,6 +22,7 @@ class CommentFactory extends Factory
             'comment'    => $this->faker->sentence(10),
             'status'     => $this->faker->numberBetween(0, 2),
             'ip_address' => $this->faker->ipv4(),
+            'user_id'    => 1,
             'created_at' => now(),
             'updated_at' => now(),
         ];
