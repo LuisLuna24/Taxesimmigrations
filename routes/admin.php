@@ -19,7 +19,7 @@ Route::get('/comments', function () {
     return view('admin.comments.index');
 })->name('comments.index');
 
-Route::resource('users',UserController::class)->only('index', 'create','edit');
+Route::resource('users',UserController::class)->only('index');
 
 Route::resource('clients',ClientController::class)->only('index', 'create','edit');
 
@@ -31,6 +31,6 @@ Route::resource('appointments',AppointmentController::class)->only('index', 'cre
 
 Route::resource('roles',RoleController::class)->only('index', 'create','edit');
 
-Route::resource('permissions',PermissionController::class)->only('index', 'create','edit');
+Route::resource('permissions',PermissionController::class)->only('index');
 
 

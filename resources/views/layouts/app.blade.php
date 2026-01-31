@@ -10,6 +10,12 @@
             'active' => 'admin.dashboard',
         ],
         [
+            'name' => 'Citas',
+            'icon' => 'svg/calendar-clock.svg',
+            'route' => 'admin.appointments.index',
+            'active' => 'admin.appointments.*',
+        ],
+        [
             'name' => 'Commentarios',
             'icon' => 'svg/message-2.svg',
             'route' => 'admin.comments.index',
@@ -27,7 +33,7 @@
         [
             'name' => 'Usuarios',
             'icon' => 'svg/users.svg',
-            'active' => ['admin.suppliers.*', 'admin.purchase_orders.*', 'admin.purchases.*'],
+            'active' => ['admin.users.*', 'admin.clients.*', 'admin.employees.*'],
             'submenu' => [
                 [
                     'name' => 'Usuarios',
@@ -52,7 +58,7 @@
         [
             'name' => 'Seguridad',
             'icon' => 'svg/shield-check.svg',
-            'active' => ['admin.customers.*', 'admin.quotes.*', 'admin.sales.*'],
+            'active' => ['admin.roles.*', 'admin.permissions.*'],
             'submenu' => [
                 [
                     'name' => 'Roles',

@@ -7,19 +7,16 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return view('admin.users.clients.index');
     }
     public function create()
     {
-        //
+        return view('admin.users.clients.create');
     }
     public function edit(Client $client)
     {
-        //
+        return view('admin.users.clients.edit',compact($client));
     }
 }

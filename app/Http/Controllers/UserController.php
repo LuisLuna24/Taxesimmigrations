@@ -9,16 +9,6 @@ class UserController extends Controller
 {
     public function index()
     {
-        //
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function edit(User $user)
-    {
-        //
+        return view('admin.users.users.index');
     }
 }
