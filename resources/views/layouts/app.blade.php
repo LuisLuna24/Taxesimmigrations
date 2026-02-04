@@ -14,18 +14,21 @@
             'icon' => 'svg/calendar-clock.svg',
             'route' => 'admin.appointments.index',
             'active' => 'admin.appointments.*',
+            'permission' => 'admin.appointments.index',
         ],
         [
-            'name' => 'Commentarios',
+            'name' => 'Comentarios',
             'icon' => 'svg/message-2.svg',
             'route' => 'admin.comments.index',
             'active' => 'admin.comments.index',
+            'permission' => 'admin.comments.index',
         ],
         [
             'name' => 'Servicios',
             'icon' => 'svg/report.svg',
             'route' => 'admin.services.index',
             'active' => 'admin.services.*',
+            'permission' => 'admin.services.index',
         ],
         [
             'header' => 'Configuracion',
@@ -34,24 +37,29 @@
             'name' => 'Usuarios',
             'icon' => 'svg/users.svg',
             'active' => ['admin.users.*', 'admin.clients.*', 'admin.employees.*'],
+            // Se muestra si tiene al menos uno de estos permisos
+            'permissions' => ['admin.users.index', 'admin.clients.index', 'admin.employees.index'],
             'submenu' => [
                 [
                     'name' => 'Usuarios',
                     'icon' => 'svg/users.svg',
                     'route' => 'admin.users.index',
                     'active' => 'admin.users.*',
+                    'permission' => 'admin.users.index',
                 ],
                 [
                     'name' => 'Clientes',
                     'icon' => 'svg/user.svg',
                     'route' => 'admin.clients.index',
                     'active' => 'admin.clients.*',
+                    'permission' => 'admin.clients.index',
                 ],
                 [
                     'name' => 'Empleados',
                     'icon' => 'svg/user.svg',
                     'route' => 'admin.employees.index',
                     'active' => 'admin.employees.*',
+                    'permission' => 'admin.employees.index',
                 ],
             ],
         ],
@@ -59,18 +67,21 @@
             'name' => 'Seguridad',
             'icon' => 'svg/shield-check.svg',
             'active' => ['admin.roles.*', 'admin.permissions.*'],
+            'permissions' => ['admin.roles.index', 'admin.permissions.index'],
             'submenu' => [
                 [
                     'name' => 'Roles',
                     'icon' => 'svg/user-shield.svg',
                     'route' => 'admin.roles.index',
                     'active' => 'admin.roles.*',
+                    'permission' => 'admin.roles.index',
                 ],
                 [
                     'name' => 'Permisos',
                     'icon' => 'svg/shield.svg',
                     'route' => 'admin.permissions.index',
                     'active' => 'admin.permissions.*',
+                    'permission' => 'admin.permissions.index',
                 ],
             ],
         ],
@@ -111,8 +122,7 @@
     @stack('css')
 </head>
 
-<body
-    class="font-sans antialiased bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body class="font-sans antialiased bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
     <div x-data="{ sidebarIsOpen: false }" class="relative flex min-h-screen">
 
@@ -133,120 +143,87 @@
 
                 <nav class="flex-1 overflow-y-auto p-4 space-y-1 custom-scrollbar">
                     @foreach ($links as $link)
-                        @isset($link['header'])
-                            <div class="pt-4 pb-1 pl-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                                {{ $link['header'] }}
-                            </div>
-                        @else
-                            @isset($link['submenu'])
-                                {{-- Corregido: Detecta si alguna ruta del submenú está activa para expandirlo --}}
-                                <div x-data="{ isExpanded: {{ request()->routeIs($link['active']) ? 'true' : 'false' }} }" class="space-y-1">
-                                    <button @click="isExpanded = !isExpanded"
-                                        class="flex items-center justify-between w-full px-3 py-2 text-sm font-medium transition-colors rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-800"
-                                        :class="isExpanded ?
-                                            'text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/10' :
-                                            'text-gray-600 dark:text-gray-400'">
+                        @php
+                            // Lógica de visibilidad del link/sección
+                            $canSeeLink = true;
+                            if (isset($link['permissions'])) {
+                                $canSeeLink = auth()->user()->canAny($link['permissions']);
+                            } elseif (isset($link['permission'])) {
+                                $canSeeLink = auth()->user()->can($link['permission']);
+                            }
+                        @endphp
 
-                                        <div class="flex items-center gap-3">
-                                            <span class="w-5 h-5 flex items-center justify-center">
-                                                {{-- Corregido: Verificación de icono con path relativo correcto --}}
-                                                @if (isset($link['icon']) && file_exists(public_path($link['icon'])))
-                                                    {!! file_get_contents(public_path($link['icon'])) !!}
-                                                @else
-                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                                        viewBox="0 0 24 24">
-                                                        <path
-                                                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
-                                                        </path>
-                                                    </svg>
-                                                @endif
-                                            </span>
-                                            <span>{{ $link['name'] }}</span>
-                                        </div>
-
-                                        <svg class="w-4 h-4 transition-transform duration-200"
-                                            :class="isExpanded ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div x-show="isExpanded" x-collapse x-cloak class="pl-10 space-y-1">
-                                        @foreach ($link['submenu'] as $item)
-                                            <a href="{{ route($item['route']) }}"
-                                                class="flex items-center gap-3 px-3 py-2 text-sm transition-colors rounded-lg group
-                                                {{ request()->routeIs($item['active'])
-                                                    ? 'text-blue-600 font-semibold dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/10'
-                                                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800' }}">
-
-                                                {{-- Contenedor del Icono --}}
-                                                <span class="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    @if (isset($item['icon']) && file_exists(public_path($item['icon'])))
-                                                        {{-- El icono heredará el color del texto gracias a 'currentColor' en el SVG --}}
-                                                        {!! file_get_contents(public_path($item['icon'])) !!}
-                                                    @else
-                                                        {{-- Icono por defecto si no existe el archivo --}}
-                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                                            viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2"
-                                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                                            </path>
-                                                        </svg>
-                                                    @endif
-                                                </span>
-
-                                                {{-- Texto del Item --}}
-                                                <span class="truncate">{{ $item['name'] }}</span>
-                                            </a>
-                                        @endforeach
-                                    </div>
+                        @if($canSeeLink)
+                            @isset($link['header'])
+                                <div class="pt-4 pb-1 pl-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                                    {{ $link['header'] }}
                                 </div>
                             @else
-                                <a href="{{ route($link['route']) }}"
-                                    class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all duration-200 rounded-lg group {{ request()->routeIs($link['active']) ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800' }}">
-                                    <span class="w-5 h-5 flex items-center justify-center">
-                                        @if (isset($link['icon']) && file_exists(public_path($link['icon'])))
-                                            {!! file_get_contents(public_path($link['icon'])) !!}
-                                        @else
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                                </path>
+                                @isset($link['submenu'])
+                                    <div x-data="{ isExpanded: {{ request()->routeIs($link['active']) ? 'true' : 'false' }} }" class="space-y-1">
+                                        <button @click="isExpanded = !isExpanded"
+                                            class="flex items-center justify-between w-full px-3 py-2 text-sm font-medium transition-colors rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-800"
+                                            :class="isExpanded ? 'text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/10' : 'text-gray-600 dark:text-gray-400'">
+
+                                            <div class="flex items-center gap-3">
+                                                <span class="w-5 h-5 flex items-center justify-center">
+                                                    @if (isset($link['icon']) && file_exists(public_path($link['icon'])))
+                                                        {!! file_get_contents(public_path($link['icon'])) !!}
+                                                    @else
+                                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                                    @endif
+                                                </span>
+                                                <span>{{ $link['name'] }}</span>
+                                            </div>
+                                            <svg class="w-4 h-4 transition-transform duration-200" :class="isExpanded ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                             </svg>
-                                        @endif
-                                    </span>
-                                    <span>{{ $link['name'] }}</span>
-                                </a>
+                                        </button>
+
+                                        <div x-show="isExpanded" x-collapse x-cloak class="pl-10 space-y-1">
+                                            @foreach ($link['submenu'] as $item)
+                                                @can($item['permission'])
+                                                    <a href="{{ route($item['route']) }}"
+                                                        class="flex items-center gap-3 px-3 py-2 text-sm transition-colors rounded-lg group {{ request()->routeIs($item['active']) ? 'text-blue-600 font-semibold dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/10' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800' }}">
+                                                        {!! file_get_contents(public_path($item['icon'])) !!}
+                                                        <span class="truncate">{{ $item['name'] }}</span>
+                                                    </a>
+                                                @endcan
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                @else
+                                    <a href="{{ route($link['route']) }}"
+                                        class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all duration-200 rounded-lg group {{ request()->routeIs($link['active']) ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800' }}">
+                                        <span class="w-5 h-5 flex items-center justify-center">
+                                            @if (isset($link['icon']) && file_exists(public_path($link['icon'])))
+                                                {!! file_get_contents(public_path($link['icon'])) !!}
+                                            @else
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                            @endif
+                                        </span>
+                                        <span>{{ $link['name'] }}</span>
+                                    </a>
+                                @endisset
                             @endisset
-                        @endisset
+                        @endif
                     @endforeach
                 </nav>
             </div>
         </aside>
 
         <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
-
-            <header
-                class="flex items-center justify-between h-16 px-4 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10">
+            <header class="flex items-center justify-between h-16 px-4 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10">
                 <div class="flex items-center">
-                    <button @click="sidebarIsOpen = true"
-                        class="p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                    <button @click="sidebarIsOpen = true" class="p-2 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
                     </button>
 
                     <nav class="hidden ml-4 md:flex items-center space-x-2 text-sm">
                         @foreach ($breadcrumbs as $index => $item)
-                            @if (!$loop->first)
-                                <span class="text-gray-400">/</span>
-                            @endif
+                            @if (!$loop->first) <span class="text-gray-400">/</span> @endif
                             @isset($item['href'])
-                                <a href="{{ $item['href'] }}"
-                                    class="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{{ $item['name'] }}</a>
+                                <a href="{{ $item['href'] }}" class="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">{{ $item['name'] }}</a>
                             @else
                                 <span class="font-semibold text-gray-800 dark:text-gray-200">{{ $item['name'] }}</span>
                             @endisset
@@ -255,50 +232,32 @@
                 </div>
 
                 <div class="flex items-center space-x-3">
-                    <button @click="toggleTheme"
-                        class="p-2 text-gray-500 rounded-xl bg-gray-100 dark:bg-gray-800 dark:text-yellow-400 hover:ring-2 ring-blue-500 transition-all">
+                    <button @click="toggleTheme" class="p-2 text-gray-500 rounded-xl bg-gray-100 dark:bg-gray-800 dark:text-yellow-400 hover:ring-2 ring-blue-500 transition-all">
                         <template x-if="!darkMode">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                            </svg>
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                         </template>
                         <template x-if="darkMode">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                         </template>
                     </button>
 
-                    <div class="relative">
-                        <x-dropdown align="right" width="48">
-                            <x-slot name="trigger">
-                                <button
-                                    class="flex items-center text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
-                                    <img class="size-9 rounded-full object-cover shadow-sm"
-                                        src="{{ Auth::user()->profile_photo_url }}"
-                                        alt="{{ Auth::user()->name }}" />
-                                </button>
-                            </x-slot>
-                            <x-slot name="content">
-                                <div class="block px-4 py-2 text-xs text-gray-400">{{ __('Manage Account') }}</div>
-                                <x-dropdown-link
-                                    href="{{ route('profile.show') }}">{{ __('Profile') }}</x-dropdown-link>
-                                <div class="border-t border-gray-200 dark:border-gray-700"></div>
-                                <form method="POST" action="{{ route('logout') }}" x-data>
-                                    @csrf
-                                    <x-dropdown-link href="{{ route('logout') }}"
-                                        @click.prevent="$root.submit();">{{ __('Log Out') }}</x-dropdown-link>
-                                </form>
-                            </x-slot>
-                        </x-dropdown>
-                    </div>
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm transition border-2 border-transparent rounded-full focus:outline-none">
+                                <img class="size-9 rounded-full object-cover shadow-sm" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <x-dropdown-link href="{{ route('profile.show') }}">{{ __('Profile') }}</x-dropdown-link>
+                            <form method="POST" action="{{ route('logout') }}" x-data> @csrf
+                                <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">{{ __('Log Out') }}</x-dropdown-link>
+                            </form>
+                        </x-slot>
+                    </x-dropdown>
                 </div>
             </header>
 
-            <main id="main-content"
-                class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 dark:bg-gray-950 p-6 md:p-10">
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 dark:bg-gray-950 p-6 md:p-10">
                 <div class="max-w-7xl mx-auto">
                     {{ $slot }}
                 </div>
@@ -309,7 +268,6 @@
     @stack('modals')
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('darkModeControl', () => ({
@@ -317,23 +275,11 @@
                 toggleTheme() {
                     this.darkMode = !this.darkMode;
                     localStorage.setItem('darkMode', this.darkMode);
+                    document.documentElement.classList.toggle('dark', this.darkMode);
                 }
             }))
         })
     </script>
-
-    <script>
-        Livewire.on('swal', (data) => {
-            Swal.fire(data[0]);
-        })
-    </script>
-
-    @if (session('swal'))
-        <script>
-            Swal.fire(@json(session('swal')));
-        </script>
-    @endif
     @stack('js')
 </body>
-
 </html>
