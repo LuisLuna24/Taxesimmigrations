@@ -30,14 +30,13 @@
             'active' => 'admin.services.*',
             'permission' => 'admin.services.index',
         ],
-        [
+        /*[
             'header' => 'Configuracion',
-        ],
+        ],*/
         [
             'name' => 'Usuarios',
             'icon' => 'svg/users.svg',
             'active' => ['admin.users.*', 'admin.clients.*', 'admin.employees.*'],
-            // Se muestra si tiene al menos uno de estos permisos
             'permissions' => ['admin.users.index', 'admin.clients.index', 'admin.employees.index'],
             'submenu' => [
                 [

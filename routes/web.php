@@ -35,6 +35,10 @@ Route::middleware(['set.lang:es'])->group(function () {
     Route::get('/contact', function () {
         return view('contact');
     })->name('contact');
+
+    Route::get('/testimonials', function () {
+        return view('testimonials');
+    })->name('testimonials');
 });
 
 
@@ -71,4 +75,8 @@ Route::prefix('en')->middleware(['set.lang:en'])->group(function () {
     Route::get('/contact', function () {
         return view('contact');
     })->name('en.contact');
+
+    Route::get('/testimonials', function () {
+        return view('testimonials');
+    })->name('en.testimonials');
 });

@@ -518,5 +518,24 @@
     "cont_social_c2": "Instagram",
     "cont_social_c3": "TikTok",
 
-    "my appointments" : "Mis citas"
+    "my appointments" : "Mis citas",
+
+    "reviws_title":"Testimonio de Clientes",
+    "revies_description":"Comparte tu experiencia con nosotros.",
+
+    "reviws_title_form":"Comparte tu experiencia con nosotros.",
+
+    "reviws_label_1":"Nombre Completo",
+    "reviws_label_2":"Correo",
+    "reviws_label_3":"Tu experiencia",
+    "reviws_form_button_1":"Enviar",
+    "reviws_form_button_2:":"Enviando...",
+    "reviws_form_susses:":"¡Enviado!",
+
+    "reviews_help_title":"¿Necesitas ayuda?",
+    "reviews_help_description":"Contáctanos directamente si tuviste un problema grave.",
+
+    "reviews_view_title":"Testimonios",
+    "reviews_view_table_1":"Aún no hay comentarios",
+    "reviews_view_table_2":"Sé la primera persona en compartir tu experiencia."
 }

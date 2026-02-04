@@ -19,10 +19,10 @@
         </div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
             <h1 class="gsap-title opacity-0 text-4xl md:text-5xl font-black text-white mb-4">
-                Opiniones de Clientes
+                {{ __('reviws_title') }}
             </h1>
             <p class="gsap-subtitle opacity-0 text-slate-400 max-w-2xl mx-auto text-lg">
-                Comparte tu experiencia con nosotros.
+                {{ __('revies_description') }}
             </p>
         </div>
     </div>
@@ -50,8 +50,7 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-bold text-slate-900">Escribir Reseña</h3>
-                                    <p class="text-xs text-slate-500">Tu opinión nos ayuda a mejorar.</p>
+                                    <h3 class="text-lg font-bold text-slate-900">{{ __('reviws_title_form') }}</h3>
                                 </div>
                             </div>
 
@@ -61,8 +60,8 @@
 
                         {{-- Nota decorativa opcional --}}
                         <div class="bg-blue-600 rounded-xl p-6 text-white text-center shadow-lg shadow-blue-600/20">
-                            <p class="font-bold text-lg mb-1">¿Necesitas ayuda?</p>
-                            <p class="text-blue-100 text-sm">Contáctanos directamente si tuviste un problema grave.</p>
+                            <p class="font-bold text-lg mb-1">{{ __('reviews_help_title') }}</p>
+                            <p class="text-blue-100 text-sm">{{ __('reviews_help_description') }}</p>
                         </div>
                     </div>
                 </div>

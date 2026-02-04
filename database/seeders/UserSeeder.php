@@ -18,6 +18,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => 'admin123#',
             'type_user_id' => 1,
+            'email_verified_at' => now(),
+
             'status' => 1
         ]);
         $superadmin->assignRole('super-admin');
@@ -27,6 +29,7 @@ class UserSeeder extends Seeder
             'email' => 'contac@taxesmigra.com',
             'password' => 'taxesmigra123#',
             'type_user_id' => 1,
+            'email_verified_at' => now(),
             'status' => 1
         ]);
         $admin->assignRole('admin');
@@ -36,6 +39,7 @@ class UserSeeder extends Seeder
             'email' => 'mili@gmail.com',
             'password' => 'Mili123#',
             'type_user_id' => 3,
+            'email_verified_at' => now(),
             'status' => 1
         ]);
     }

@@ -57,17 +57,17 @@ class PermissionsSeeder extends Seeder
         // 4. Crear Admin y asignar específicos
         $roleAdmin = Role::create(['name' => 'admin']);
         $roleAdmin->syncPermissions([
-            'admin.appointments.index',
-            'admin.appointments.create',
-            'admin.appointments.edit',
-            'admin.appointments.validate',
+            //'admin.appointments.index',
+            //'admin.appointments.create',
+            //'admin.appointments.edit',
+            //'admin.appointments.validate',
             'admin.comments.index',
             'admin.comments.validate',
             'admin.comments.delete',
-            'admin.clients.index',
-            'admin.clients.create',
-            'admin.clients.edit',
-            'admin.clients.delete',
+            //'admin.clients.index',
+            //'admin.clients.create',
+            //'admin.clients.edit',
+            //'admin.clients.delete',
         ]);
     }
 }

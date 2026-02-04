@@ -11,7 +11,7 @@
         'services' => $currentLang === 'en' ? 'Services' : 'Servicios',
         'values' => $currentLang === 'en' ? 'Values' : 'Valores',
         'policies' => $currentLang === 'en' ? 'Policies' : 'Políticas',
-        'reviews' => $currentLang === 'en' ? 'Reviews' : 'Reseñas',
+        'reviews' => $currentLang === 'en' ? 'Testimonials' : 'Testimonios',
         'contact' => $currentLang === 'en' ? 'Contact' : 'Contacto',
         'login' => $currentLang === 'en' ? 'Log In' : 'Iniciar Sesión',
         'register' => $currentLang === 'en' ? 'Sign Up' : 'Registrarse',
@@ -142,12 +142,12 @@
                         </div>
                     </div>
                 @else
-                    <a href="{{ route('login') }}"
-                        class="text-sm font-bold text-neutral-600 hover:text-primary-800 px-3">{{ $t['login'] }}</a>
-                    <a href="{{ route('register') }}"
+                    <!--a href="{{ route('login') }}"
+                        class="text-sm font-bold text-neutral-600 hover:text-primary-800 px-3">{{ $t['login'] }}</-a>
+                    <a-- href="{{ route('register') }}"
                         class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-primary-800 rounded-full hover:bg-primary-900 transition-all shadow-md active:scale-95">
                         {{ $t['register'] }}
-                    </a>
+                    </a-->
                 @endif
             </div>
 
