@@ -194,15 +194,15 @@
                             action: 'submit'
                         })
                         .then(function(token) {
-                            // Disparamos un evento personalizado de navegador
-                            window.dispatchEvent(new CustomEvent('captcha-token-received', {
-                                detail: {
-                                    token: token
-                                }
-                            }));
+                            // Solo enviamos a Livewire, más limpio.
+                            // Nota: Asegúrate de que el parámetro coincida con lo que espera tu método PHP.
+                            Livewire.dispatch('save', {
+                                captchaToken: token
+                            });
                         })
                         .catch(function(error) {
-                            alert('Error al conectar con Google.');
+                            console.error(error);
+                            alert('Error de seguridad. Recarga la página.');
                         });
                 });
             }

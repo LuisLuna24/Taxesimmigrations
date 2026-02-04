@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
     {
         $superadmin = User::create([
             'name' => 'Luis Luna',
-            'email' => 'admin@gmail.com',
-            'password' => 'admin123#',
+            'email' => 'eduarlun4@gmail.com',
+            'password' => 'Hmcnjsa1*.',
             'type_user_id' => 1,
             'email_verified_at' => now(),
 
@@ -33,14 +33,5 @@ class UserSeeder extends Seeder
             'status' => 1
         ]);
         $admin->assignRole('admin');
-
-        User::create([
-            'name' => 'Mildre Villaseñor',
-            'email' => 'mili@gmail.com',
-            'password' => 'Mili123#',
-            'type_user_id' => 3,
-            'email_verified_at' => now(),
-            'status' => 1
-        ]);
     }
 }

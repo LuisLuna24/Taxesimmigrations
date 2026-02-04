@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class
         ]);
 
-        Comment::factory(10)->validado()->create();
+        //Comment::factory(10)->validado()->create();
     }
 }

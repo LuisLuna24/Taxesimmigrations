@@ -142,9 +142,9 @@
                         </div>
                     </div>
                 @else
-                    <!--a href="{{ route('login') }}"
+                    <!--a href=""
                         class="text-sm font-bold text-neutral-600 hover:text-primary-800 px-3">{{ $t['login'] }}</-a>
-                    <a-- href="{{ route('register') }}"
+                    <a-- href=""
                         class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-primary-800 rounded-full hover:bg-primary-900 transition-all shadow-md active:scale-95">
                         {{ $t['register'] }}
                     </a-->
@@ -188,10 +188,10 @@
                         <button type="submit" class="w-full py-3 text-red-600 font-bold">{{ $t['logout'] }}</button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}"
-                        class="w-full py-3 text-center font-bold text-neutral-600 border border-gray-200 rounded-xl">{{ $t['login'] }}</a>
-                    <a href="{{ route('register') }}"
-                        class="w-full py-3 bg-primary-800 text-white rounded-xl text-center font-bold">{{ $t['register'] }}</a>
+                    <!--a href=""
+                        class="w-full py-3 text-center font-bold text-neutral-600 border border-gray-200 rounded-xl">{{ $t['login'] }}</!--a>
+                    <a-- href=""
+                        class="w-full py-3 bg-primary-800 text-white rounded-xl text-center font-bold">{{ $t['register'] }}</a-->
                 @endif
             </div>
         </div>
