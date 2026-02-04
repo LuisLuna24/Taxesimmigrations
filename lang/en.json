@@ -499,7 +499,6 @@
     "cont_title": "Contact Us",
     "cont_desc": "We are here to listen. Choose your preferred way to connect.",
 
-
     "cont_sub_title_contact": "Direct Contact",
     "cont_contact_c1": "Call Us",
     "cont_contact_c2": "Contact Us on WhatsApp",
@@ -508,5 +507,24 @@
     "cont_sub_title_social": "Follow Us",
     "cont_social_c1": "Facebook",
     "cont_social_c2": "Instagram",
-    "cont_social_c3": "TikTok"
+    "cont_social_c3": "TikTok",
+
+    "reviws_title": "Client Testimonials",
+    "revies_description": "Share your experience with us.",
+
+    "reviws_title_form": "Share your experience with us.",
+
+    "reviws_label_1": "Full Name",
+    "reviws_label_2": "Email",
+    "reviws_label_3": "Your Experience",
+    "reviws_form_button_1": "Submit",
+    "reviws_form_button_2": "Sending...",
+    "reviws_form_susses": "Sent!",
+
+    "reviews_help_title": "Need help?",
+    "reviews_help_description": "Contact us directly if you experienced a serious issue.",
+
+    "reviews_view_title":"Testimonials",
+    "reviews_view_table_1":"No reviews yet",
+    "reviews_view_table_2":"Be the first one to share your experience."
 }

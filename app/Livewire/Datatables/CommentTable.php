@@ -22,7 +22,7 @@ class CommentTable extends DataTableComponent
 
         $this->setConfigurableAreas([
             'after-wrapper' => [
-                'admin.modal',
+                'admin.comments.modal',
             ]
         ]);
     }
@@ -90,7 +90,7 @@ class CommentTable extends DataTableComponent
                 ->format(fn($value) => $value->format('Y-m-d')),
             Column::make("Acciones")
                 ->label(function ($row) {
-                    return view('admin.actions', ['comment' => $row]);
+                    return view('admin.comments.actions', ['comment' => $row]);
                 })
         ];
     }

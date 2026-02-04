@@ -34,14 +34,12 @@
         <div
             class="absolute top-0 left-0 right-0 -z-10 h-[500px] w-full bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--tw-gradient-stops))] from-primary-200/40 via-white to-transparent">
         </div>
-
-        <div
-            class="absolute top-1/3 left-10 w-72 h-72 bg-rojo-400/20 rounded-full blur-[100px] -z-10 animate-pulse">
+        <div class="absolute top-1/3 left-10 w-72 h-72 bg-rojo-400/20 rounded-full blur-[100px] -z-10 animate-pulse">
         </div>
 
         <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
 
-            <div class="flex flex-col items-center lg:items-start flex-1 text-center lg:text-left z-10">
+            <div class="relative z-10 flex flex-col items-center lg:items-start flex-1 text-center lg:text-left">
 
                 <div class="hero-content opacity-0 translate-y-4 mb-8">
                     <div class="relative inline-block group cursor-pointer">
@@ -106,24 +104,28 @@
                 </div>
             </div>
 
-            <div class="flex-1 relative w-full flex justify-center lg:justify-end mt-16 lg:mt-0 perspective-1000">
+            <div
+                class="absolute inset-0 z-0 w-full h-full lg:static lg:flex-1 lg:relative lg:w-full lg:h-auto lg:flex lg:justify-end lg:mt-0 perspective-1000 pointer-events-none lg:pointer-events-auto">
+
                 <div id="hero-blob"
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary-400/30 via-rojo-400/30 to-purple-400/30 rounded-full blur-3xl -z-10 opacity-0 scale-75">
+                    class="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary-400/30 via-rojo-400/30 to-purple-400/30 rounded-full blur-3xl -z-10 opacity-0 scale-75">
                 </div>
 
-                <div id="hero-image-container" class="relative opacity-0 scale-95 z-10">
+                <div id="hero-image-container"
+                    class="relative w-full h-full lg:w-auto lg:h-auto opacity-0 scale-95 z-10 flex items-center justify-center">
                     <div
-                        class="relative rounded-3xl p-2 bg-white/40 backdrop-blur-sm border border-white/50 shadow-2xl">
-                        <img src="{{ asset('img/home.webp') }}"
-                            alt="Professional Services"
-                            class="block w-full h-auto lg:max-w-[580px] rounded-2xl shadow-[0_0_1px_rgba(0,0,0,0.1)]">
+                        class="relative w-full h-full lg:w-auto lg:h-auto lg:rounded-3xl lg:p-2 lg:bg-white/10 lg:backdrop-blur-sm lg:border lg:border-white/50 lg:shadow-2xl">
 
-                        <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 pointer-events-none">
+                        <img src="{{ asset('img/home.webp') }}" alt="Professional Services"
+                            class="block w-full h-full object-cover opacity-65 lg:opacity-100 lg:w-full lg:h-auto lg:max-w-[580px] lg:rounded-2xl lg:shadow-[0_0_1px_rgba(0,0,0,0.1)]">
+
+                        <div
+                            class="hidden lg:block absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5 pointer-events-none">
                         </div>
                     </div>
 
                     <div id="floating-badge"
-                        class="absolute -bottom-8 -left-8 md:-left-12 bg-white/80 backdrop-blur-md p-5 rounded-2xl shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] border border-white/40 hidden sm:block opacity-0 translate-y-4 max-w-[240px]">
+                        class="absolute -bottom-8 -left-8 md:-left-12 bg-white/80 backdrop-blur-md p-5 rounded-2xl shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] border border-white/40 hidden lg:block opacity-0 translate-y-4 max-w-[240px]">
                         <div class="flex items-start gap-4">
                             <div
                                 class="size-12 rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center text-white shadow-lg shadow-primary-500/30 shrink-0">

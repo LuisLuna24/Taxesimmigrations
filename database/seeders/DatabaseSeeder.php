@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Comment;
+use App\Models\TypeUser;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,15 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::create([
-            'name' => 'Luis Luna',
-            'email' => 'admin@gmail.com',
-            'password' => 'admin123#',
-            'status' => 1
+        $this->call([
+            TypeUserSeeder::class,
+            PermissionsSeeder::class,
+            UserSeeder::class
         ]);
 
-        Comment::factory(10)->validado()->create();
+        //Comment::factory(10)->validado()->create();
     }
 }

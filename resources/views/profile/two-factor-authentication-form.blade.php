@@ -86,7 +86,7 @@
             @else
                 @if ($showingRecoveryCodes)
                     <x-confirms-password wire:then="regenerateRecoveryCodes">
-                        <x--button class="me-3">
+                        <x-button class="me-3">
                             {{ __('Regenerate Recovery Codes') }}
                         </x-button>
                     </x-confirms-password>

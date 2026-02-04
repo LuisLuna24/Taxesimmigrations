@@ -14,10 +14,15 @@ class Comment extends Model
         'name',
         'comment',
         'status',
-        'ip_address'
+        'ip_address',
+        'user_id'
     ];
 
     protected $casts = [
         'status' => 'integer', // O mapearlo a un Enum si lo creas
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

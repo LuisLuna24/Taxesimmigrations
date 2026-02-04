@@ -95,7 +95,7 @@
                     </a>
 
                     {{-- Tarjeta Correo --}}
-                    <a href="mailto:contac@taxesmigra.com" target="_blank" rel="noopener noreferrer" class="gsap-card-contact opacity-0 block group">
+                    <a href="mailto:contact@josdalymultiservicesllc.com" target="_blank" rel="noopener noreferrer" class="gsap-card-contact opacity-0 block group">
                         <div
                             class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-200">
                             <div
@@ -109,7 +109,7 @@
                                 <p class="text-sm text-slate-500 font-medium uppercase tracking-wider">{{ __('cont_contact_c3') }}</p>
                                 <p
                                     class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-indigo-700 transition-colors">
-                                    contac@taxesmigra.com</p>
+                                    contact@josdalymultiservicesllc.com</p>
                             </div>
                         </div>
                     </a>

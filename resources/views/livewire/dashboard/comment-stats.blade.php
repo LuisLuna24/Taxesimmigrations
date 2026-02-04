@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="mt-4 pt-4 border-t border-gray-50">
-            <a href="{{ route('admin.comments', ['table-filters[estatus]' => '0']) }}"
+            <a href="{{ route('admin.comments.index', ['table-filters[estatus]' => '0']) }}"
                class="inline-flex items-center text-sm font-medium text-amber-600 hover:text-amber-700">
                 Revisar ahora
                 <x-w-icon name="chevron-right" class="w-4 h-4 ml-1" />
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="mt-4 pt-4 border-t border-gray-50">
-            <a href="{{ route('admin.comments', ['table-filters[estatus]' => '1']) }}"
+            <a href="{{ route('admin.comments.index', ['table-filters[estatus]' => '1']) }}"
                class="inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700">
                 Ver historial
                 <x-w-icon name="chevron-right" class="w-4 h-4 ml-1" />
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="mt-4 pt-4 border-t border-gray-50">
-            <a href="{{ route('admin.comments', ['table-filters[estatus]' => '2']) }}"
+            <a href="{{ route('admin.comments.index', ['table-filters[estatus]' => '2']) }}"
                class="inline-flex items-center text-sm font-medium text-rose-600 hover:text-rose-700">
                 Gestionar
                 <x-w-icon name="chevron-right" class="w-4 h-4 ml-1" />
