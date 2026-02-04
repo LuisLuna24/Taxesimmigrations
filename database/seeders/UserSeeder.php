@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
 
         $admin = User::create([
             'name' => 'Josdaly Marin',
-            'email' => 'contac@taxesmigra.com',
+            'email' => 'contact@josdalymultiservicesllc.com',
             'password' => 'taxesmigra123#',
             'type_user_id' => 1,
             'email_verified_at' => now(),
