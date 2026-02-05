@@ -54,7 +54,7 @@
             <div class="lg:col-span-5">
                 <a href="{{ $currentLang === 'en' ? '/en' : '/' }}"
                     class="inline-block mb-8 transition-transform hover:scale-105">
-                    <img src="{{ asset('img/Locho M.webp') }}" alt="Logo" class="h-16 w-auto object-contain" />
+                    <img src="{{ asset('img/Locho_M.webp') }}" alt="Logo" class="h-16 w-auto object-contain" />
                 </a>
                 <p class="text-slate-500 leading-relaxed mb-8 max-w-sm text-sm">
                     {{ $text['description'] }}

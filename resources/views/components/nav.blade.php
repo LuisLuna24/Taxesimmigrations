@@ -50,7 +50,7 @@
 
             <div class="flex-shrink-0 flex items-center">
                 <a href="{{ $currentLang === 'en' ? '/en' : '/' }}" class="group relative z-50">
-                    <img src="{{ asset('img/Locho M.webp') }}" alt="logo"
+                    <img src="{{ asset('img/Locho_M.webp') }}" alt="logo"
                         class="h-10 transition-transform duration-300 group-hover:scale-105" />
                 </a>
             </div>

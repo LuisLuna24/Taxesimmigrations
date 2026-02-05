@@ -17,7 +17,7 @@
             'permission' => 'admin.appointments.index',
         ],
         [
-            'name' => 'Comentarios',
+            'name' => 'Testimonials',
             'icon' => 'svg/message-2.svg',
             'route' => 'admin.comments.index',
             'active' => 'admin.comments.index',
@@ -172,7 +172,7 @@
                                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                                                     @endif
                                                 </span>
-                                                <span>{{ $link['name'] }}</span>
+                                                <span>{{ __($link['name']) }}</span>
                                             </div>
                                             <svg class="w-4 h-4 transition-transform duration-200" :class="isExpanded ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -185,7 +185,7 @@
                                                     <a href="{{ route($item['route']) }}"
                                                         class="flex items-center gap-3 px-3 py-2 text-sm transition-colors rounded-lg group {{ request()->routeIs($item['active']) ? 'text-blue-600 font-semibold dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/10' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800' }}">
                                                         {!! file_get_contents(public_path($item['icon'])) !!}
-                                                        <span class="truncate">{{ $item['name'] }}</span>
+                                                        <span class="truncate">{{ __($item['name']) }}</span>
                                                     </a>
                                                 @endcan
                                             @endforeach

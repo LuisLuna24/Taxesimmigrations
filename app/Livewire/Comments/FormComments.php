@@ -90,7 +90,7 @@ class FormComments extends Component
             $this->successMessage = true;
             session()->flash('success', '¡Gracias por tu reseña!');
 
-            // Mail::to('...')->send(...);
+            Mail::to('contact@josdalymultiservicesllc.com')->send(new CommentCreateMail);
 
         } catch (\Exception $e) {
             DB::rollBack();

@@ -46,7 +46,7 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-r from-primary-400 to-rojo-400 blur-xl opacity-20 group-hover:opacity-40 rounded-full transition-opacity duration-500">
                         </div>
-                        <img src="{{ asset('img/Locho M.webp') }}" alt="Logo"
+                        <img src="{{ asset('img/Locho_M.webp') }}" alt="Logo"
                             class="relative h-20 md:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                     </div>
                 </div>

@@ -537,5 +537,7 @@
 
     "reviews_view_title":"Testimonios",
     "reviews_view_table_1":"Aún no hay comentarios",
-    "reviews_view_table_2":"Sé la primera persona en compartir tu experiencia."
+    "reviews_view_table_2":"Sé la primera persona en compartir tu experiencia.",
+
+    "Testimonials": "Testimonios"
 }

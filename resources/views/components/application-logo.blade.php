@@ -1,1 +1,1 @@
-<img src="{{ asset('img/Locho M.webp') }}" alt="logo" class="h-20">
+<img src="{{ asset('img/Locho_M.webp') }}" alt="logo" class="h-20">
