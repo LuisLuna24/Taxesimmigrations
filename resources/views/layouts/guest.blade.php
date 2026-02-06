@@ -7,12 +7,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'TAXES AND IMMIGRATION BY JOSDALY MARIN LLC')</title>
-    <meta name="description" content="@yield('meta_description', 'Preparación profesional de formas migratorias e impuestos. Servicios expertos por Josdaly Marin LLC. Honestidad y eficiencia.')">
+    <meta name="description" content="@yield('meta_description', 'Preparación de impuestos y llenado deformas migratorias. Servicios expertos por Josdaly Marin LLC. Honestidad y eficiencia.')">
     <meta name="keywords"
         content="Taxes and Immigration, Josdaly Marin, preparación de impuestos, formas migratorias, tax prep, notary public">
 
     <meta property="og:title" content="TAXES AND IMMIGRATION BY JOSDALY MARIN LLC">
-    <meta property="og:description" content="Especialistas en preparación de documentos migratorios y fiscales.">
+    <meta property="og:description" content="Preparación de impuestos y llenado deformas migratorias. Servicios expertos por Josdaly Marin LLC. Honestidad y eficiencia.">
     <meta property="og:image" content="{{ asset('img/og-image.jpg') }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
