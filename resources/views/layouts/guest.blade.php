@@ -13,7 +13,7 @@
 
     <meta property="og:title" content="TAXES AND IMMIGRATION BY JOSDALY MARIN LLC">
     <meta property="og:description" content="Preparación de impuestos y llenado deformas migratorias. Servicios expertos por Josdaly Marin LLC. Honestidad y eficiencia.">
-    <meta property="og:image" content="{{ asset('img/og-image.jpg') }}">
+    <meta property="og:image" content="{{ asset('img/Locho_M.webp') }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
